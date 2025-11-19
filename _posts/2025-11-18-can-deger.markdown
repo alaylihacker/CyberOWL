@@ -1,0 +1,24 @@
+---
+layout: post
+date: 2025-11-18 16:14:00 +0300
+author:
+  - name: "Alaylı Hacker"
+    link: "https://github.com/alaylihacker"
+comments: true
+
+title: "Can Değer"
+lang: tr
+categories: Creators
+tags: [Security Architect, Streamer]
+desc: "Beyaz Takkeli Tornacı"
+image: "https://avatars.githubusercontent.com/u/4986881?v=4"
+social:
+  youtube: "https://youtube.com/@candeger"
+  twitter: "https://twitter.com/CanDeger"
+  instagram: "https://instagram.com/CanDeger"
+  linkedin: "https://linkedin.com/in/CanDeger"
+  github: "https://github.com/lunizz"
+  website: "https://sss.lunizz.com/"
+  twitch: "https://twitch.tv/LuNiZz"
+---
+90'lar sonu 2000'lerin başına kadar sistem yöneticiliği, web, dergi editörlüğü ile vakit harcadıktan sonra 2001'de MS ve Cisco cert'lerini hallettim. Sonra askerlik, sonrasında tekrar işe başladığımda Microsoft teknolojileri üzerine eğitmendim. Sonrası malum; danışman, pentester falan derken kendimi McAfee, Intel, Microsoft, AWS gibi firmalarda buldum. 2014'te de "Biraz da soğuk görelim" diyerek Danimarka'ya demir attım ve o zamandan beri buralardayım.

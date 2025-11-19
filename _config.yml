@@ -1,0 +1,28 @@
+title: Cyber OWL
+author: Alaylı Hacker
+url: https://alaylihacer.github.io
+baseurl: "/CyberOWL"
+description: >
+  A site that contains useful links related to cybersecurity.
+favicon: "favicon.png"
+
+
+#google_analytics: G-GGGGGGGGGG
+#google-verification: 
+#bing-verification: 
+#yandex-verification: 
+
+paginate: 3
+paginate_path: "/blog/page:num/"
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-paginate

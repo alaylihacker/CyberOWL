@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light py-2">
+  <div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center me-3" href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/{{ site.favicon }}" alt="Logo" width="30" height="30"
+        class="d-inline-block align-text-top me-2">
+      CyberOWL
+    </a>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-autoe text-center mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link confirm-pr-link  align-items-center" href="https://github.com/alaylihacker/cyberOWL/pulls">
+            <i class="fas fa-plus"></i> PR
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/categories"><i class="fas fa-list"></i> Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/tags"><i class="fas fa-tag"></i> Tags</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+        </li>
+      </ul>
+      <div class="d-flex ms-auto mt-2 mt-md-0 gitstat">
+        <a class="me-2" href="https://github.com/alaylihacker/CyberOWL/stargazers">
+          <img src="https://img.shields.io/github/stars/alaylihacker/CyberOWL" alt="Stars Badge">
+        </a>
+        <a href="https://github.com/alaylihacker/CyberOWL/network/members">
+          <img src="https://img.shields.io/github/forks/alaylihacker/CyberOWL" alt="Forks Badge">
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="prModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Pull Request Notice</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="prMessage">
+          Before submitting a Pull Request, please read the About section and follow the guidelines.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" id="prGoBtn" class="btn btn-primary">Go to About</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const prModalEl = document.getElementById('prModal');
+    const prModal = new bootstrap.Modal(prModalEl);
+
+    document.querySelectorAll('.confirm-pr-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        prModal.show();
+      });
+    });
+
+    document.getElementById('prGoBtn').addEventListener('click', function () {
+      window.location.href = "{{ site.baseurl }}/about";
+    });
+  });
+</script>

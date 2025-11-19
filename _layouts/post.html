@@ -1,0 +1,154 @@
+---
+layout: default
+---
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">
+      {{ page.title | escape }}
+    </h1>
+
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%d %B %Y" }} {%- if page.modified_date -%}
+        <time class="dt-modified" datetime="{{ page.modified_date | date_to_xmlschema }}" itemprop="dateModified">
+          • Updated: {{ page.modified_date | date: "%d %B %Y" }}
+        </time>
+        {%- endif -%}
+      </time>
+      {% if page.author %}
+      • <strong>Added by:</strong>
+      {% for author in page.author %}
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="{{ author.link }}"><span class="p-author h-card" itemprop="name">{{ author.name }}</span></a>
+      </span>
+      {% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+      {% endif %}
+    </p>
+  </header>
+  <hr>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center align-items-start">
+        <img src="{{ page.image | default: '/assets/img/default-post-bg.webp' }}" alt="Post Image"
+          class="img-fluid rounded shadow" style="max-height: 260px; object-fit: cover;">
+      </div>
+      <div class="col-md-6 rightinfo">
+        <h3 class="fw-bold text-center">{{ page.title }}</h3>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2 d-flex align-items-center">
+            <strong class="me-1">Language:</strong>
+            {% if page.lang %}
+            <img src="https://flagcdn.com/24x18/{{ page.lang }}.png" />
+            {% else %}
+            🌍
+            {% endif %}
+          </li>
+          <li class="mb-2">
+            <strong>Categories:</strong>
+            {% for cat in page.categories %}
+            <a href="{{ site.baseurl }}/categories/{{ cat | downcase | replace: ' ', '-' }}/"
+              class="badge bg-primary text-decoration-none me-1">
+              {{ cat }}
+            </a>
+            {% endfor %}
+          </li>
+          <li class="mb-2">
+            <strong>Tags:</strong>
+            {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/"
+              class="badge bg-warning text-dark text-decoration-none me-1">
+              #{{ tag }}
+            </a>
+            {% endfor %}
+          </li>
+          <li class="mb-2">
+            <strong>Website:</strong>
+            <a href="{{ page.social.website | join: " , " }}">{{ page.social.website | join: ", " }}</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    {% if page.social %}
+    <div class="social-bar d-flex flex-wrap gap-3 mt-4 mb-4 justify-content-center">
+
+      {% assign s = page.social %}
+
+      {% if s.youtube %}
+      <a href="{{ s.youtube }}" target="_blank" class="btn btn-outline-danger btn-sm">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      {% endif %}
+
+      {% if s.twitter %}
+      <a href="{{ s.twitter }}" target="_blank" class="btn btn-outline-primary btn-sm">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+      {% endif %}
+
+      {% if s.instagram %}
+      <a href="{{ s.instagram }}" target="_blank" class="btn btn-outline-warning   btn-sm">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      {% endif %}
+
+      {% if s.linkedin %}
+      <a href="{{ s.linkedin }}" target="_blank" class="btn btn-outline-info btn-sm">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      {% endif %}
+
+      {% if s.github %}
+      <a href="{{ s.github }}" target="_blank" class="btn btn-outline-dark btn-sm">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      {% endif %}
+
+      {% if s.hackerone %}
+      <a href="{{ s.hackerone }}" target="_blank" class="btn btn-outline-secondary btn-sm">
+        ⚡ HackerOne
+      </a>
+      {% endif %}
+
+      {% if s.bugcrowd %}
+      <a href="{{ s.bugcrowd }}" target="_blank" class="btn btn-outline-warning btn-sm">
+        🎯 Bugcrowd
+      </a>
+      {% endif %}
+
+      {% if s.tryhackme %}
+      <a href="{{ s.tryhackme }}" target="_blank" class="btn btn-outline-success btn-sm">
+        🧩 TryHackMe
+      </a>
+      {% endif %}
+
+      {% if s.hackthebox %}
+      <a href="{{ s.hackthebox }}" target="_blank" class="btn btn-outline-success btn-sm">
+        🟩 HackTheBox
+      </a>
+      {% endif %}
+
+      {% if s.twitch %}
+      <a href="{{ s.twitch }}" target="_blank" class="btn btn-outline-dark btn-sm">
+        <i class="fab fa-twitch"></i> Twitch
+      </a>
+      {% endif %}
+
+    </div>
+    {% endif %}
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="text-muted">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  
+  {%- if page.comments -%}
+  	{%- include disqus_comments.html -%}
+  {%- endif -%}
+</article>
