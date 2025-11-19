@@ -7,11 +7,11 @@ author:
 comments: true
 
 title: "HackTheBox"
-lang: en
+lang: us
 categories: Platforms
 tags: [education, practice,red team,pentest]
 desc: "Cyber Security Training"
-image: "https://www.hackthebox.com/images/landingv3/mega-menu-logo-htb.svg"
+image: "https://yt3.googleusercontent.com/2Tq9apgiHSV7NrCKzgRMbm-AABWJJXuyWMY_7MpQlVdvemqJRWcGegVq0G4e9xHCl8HcbQs_Ag=s160-c-k-c0x00ffffff-no-rj"
 social:
   youtube: "https://www.youtube.com/channel/UCRnWD3BsY5Co2MMETB7lHQw"
   twitter: "https://twitter.com/hackthebox_eu"
@@ -20,4 +20,5 @@ social:
   website: "https://www.hackthebox.com/"
 ---
 An education-focused practice site that includes hackable machines that allow people to improve themselves in the field of cyber security.
+
 It mostly hosts pentest-oriented machines.
