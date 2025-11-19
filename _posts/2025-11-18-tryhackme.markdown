@@ -7,11 +7,11 @@ author:
 comments: true
 
 title: "TryHackMe"
-lang: en
+lang: us
 categories: Platforms
 tags: [education, practice]
 desc: "Cyber Security Training"
-image: "https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg"
+image: "https://yt3.googleusercontent.com/2M3WiTvqDBIjd2AneqZ8CapyD9FL6NU9s2TIqiDliUujGPBhaTcHxFVRJQl8DLBjKL3T6NOJsg=s160-c-k-c0x00ffffff-no-rj"
 social:
   youtube: "https://www.youtube.com/channel/UCRnWD3BsY5Co2MMETB7lHQw"
   twitter: "https://twitter.com/tryhackme"
@@ -20,3 +20,4 @@ social:
   website: "https://tryhackme.com/"
 ---
 TryHackMe is a free online platform for learning cyber security, using hands-on exercises and labs, all through your browser!
+
